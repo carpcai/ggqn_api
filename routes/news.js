@@ -32,7 +32,7 @@ router.get('/later_news', function(req, res, next) {
 
 /* GET later news api. */
 router.get('/later_news/:page', function(req, res, next) {
-  userGetSql = 'Select id,title,pubdate From `dede_archives` where channel=1 And arcrank = 0 order by id desc limit '+10*req.params.page+',10';
+  userGetSql = 'Select id,title,source,pubdate,litpic,description From `dede_archives` where channel=1 And arcrank = 0 order by id desc limit '+ connection.escape(10*req.params.page)+',10';
   connection.query(userGetSql,function (err, result) {
   if(err){
     console.log('[SELECT ERROR] - ',err.message);
