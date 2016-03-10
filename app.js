@@ -60,7 +60,7 @@ app.use(function(err, req, res, next) {
 
 /** exports APP.js,make this application be a api **/
 //module.exports = app;
-app.listen(3000);
+app.listen(1086);
 
 
 //end process after pressing ENTER, for debug purpose
